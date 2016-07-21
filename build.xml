@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<!-- Configuration of the Ant build system to generate a Jar file -->
+<project name="AntProject" default="CreateJar">
+	
+	<description>
+			Create a Java Project (JAR) with Ant build script
+		</description>
+
+		<property name="projectName" value="AntProject" />
+		<property name="src.dir" location="src" />
+		<property name="build.dir" location="bin" />
+		<property name="dist.dir" location="dist" />
+		<property name="main-class" value="com.test.FirstImpl" />
+
+
+		<target name="init">
+			<mkdir dir="${build.dir}" />
+		</target>
+	
+		<!-- To work with external libraries, need classpath to compile -->
+		<target name="compile" depends="init" description="compile the source ">
+			<javac includeantruntime="false" srcdir="${src.dir}" destdir="${build.dir}"/>
+		</target>
+
+		<target name="CreateJar" depends="compile" description="package, output to JAR">
+			<mkdir dir="${dist.dir}" />
+			<jar jarfile="${build.dir}/${projectName}.jar" basedir="${dist.dir}">
+				<manifest>
+					<attribute name="Main-Class" value="${main-class}" />
+					<attribute name="Class-Path" value="${classpath.name}" />
+				</manifest>
+			</jar>
+		</target>
+
+		<target name="clean" description="clean up">
+			<delete dir="${dist.dir}" />
+		</target>
+
+		<!-- Default, run this -->
+		<target name="main" depends="clean, compile, CreateJar" />
+
+</project>
