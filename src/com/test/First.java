@@ -27,7 +27,7 @@ public class First {
 	/**
 	 * @param name the rollNo to set
 	 */
-	public void setRollNo(String rollNo) {
+	/*public void setRollNo(String rollNo) {
 		this.rollNo = rollNo;
-	}
+	}*/
 }
