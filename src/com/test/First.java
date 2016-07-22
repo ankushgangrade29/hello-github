@@ -6,9 +6,9 @@ public class First {
 	/**
 	 * @return the name
 	 */
-	public String getName() {
+	/*public String getName() {
 		return name;
-	}
+	}*/
 
 	/**
 	 * @param name the name to set
