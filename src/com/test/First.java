@@ -20,9 +20,9 @@ public class First {
 	/**
 	 * @return the rollNo
 	 */
-	/*public String getRollNo() {
+	public String getRollNo() {
 		return rollNo;
-	}*/
+	}
 
 	/**
 	 * @param name the rollNo to set
